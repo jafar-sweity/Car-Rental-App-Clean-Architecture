@@ -74,11 +74,7 @@ namespace CarRentalApp.Infrastructure.Repositories
         {
             try
             {
-                var existingUser = _context.Users.Find(user.Id);
-                if (existingUser == null)
-                {
-                    throw new KeyNotFoundException("User not found.");
-                }
+                var existingUser = _context.Users.Find(user.Id) ?? throw new KeyNotFoundException("User not found.");
                 _context.Users.Update(user);
                 return _context.SaveChangesAsync();
             }
