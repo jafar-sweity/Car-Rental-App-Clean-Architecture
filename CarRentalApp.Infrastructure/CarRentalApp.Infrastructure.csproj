@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarRentalApp.Application\CarRentalApp.Application.csproj" />
+    <ProjectReference Include="..\CarRentalApp.Core\CarRentalApp.Core.csproj" />
+  </ItemGroup>
+
 </Project>
+ApplicationDbContext.cs
