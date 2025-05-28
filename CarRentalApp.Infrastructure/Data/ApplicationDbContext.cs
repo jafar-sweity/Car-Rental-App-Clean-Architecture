@@ -1,4 +1,5 @@
 ﻿using CarRentalApp.Core.Entities;
+using CarRentalApp.Infrastructure.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace CarRentalApp.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+            modelBuilder.Seed(); 
         }
     }
 }
