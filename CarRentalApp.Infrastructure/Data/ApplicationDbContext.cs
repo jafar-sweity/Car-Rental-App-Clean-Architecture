@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarRentalApp.Infrastructure.Data
 {
-    class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
