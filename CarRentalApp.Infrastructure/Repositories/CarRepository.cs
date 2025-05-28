@@ -36,11 +36,7 @@ namespace CarRentalApp.Infrastructure.Repositories
             try
             {
                 var car = await _context.Cars.FindAsync(id);
-                if (car == null)
-                {
-                    throw new KeyNotFoundException($"Car with ID {id} not found.");
-                }
-                return car;
+                return car == null ? throw new KeyNotFoundException($"Car with ID {id} not found.") : car;
             }
             catch (Exception ex)
             {
@@ -65,12 +61,7 @@ namespace CarRentalApp.Infrastructure.Repositories
         {
             try
             {
-                var existingCar = await _context.Cars.FindAsync(car.Id);
-                if (existingCar == null)
-                {
-                    throw new KeyNotFoundException($"Car with ID {car.Id} not found.");
-                }
-
+                var existingCar = await _context.Cars.FindAsync(car.Id) ?? throw new KeyNotFoundException($"Car with ID {car.Id} not found.");
                 existingCar.Brand = car.Brand;
                 existingCar.Model = car.Model;
                 existingCar.PricePerDay = car.PricePerDay;
