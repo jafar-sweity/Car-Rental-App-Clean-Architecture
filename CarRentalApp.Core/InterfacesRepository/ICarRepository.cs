@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarRentalApp.Core.InterfacesRepository
 {
-    interface ICarRepository
+    public interface ICarRepository
     {
         Task<List<Car>> GetAllCarsAsync();
         Task<Car> GetCarByIdAsync(int id);
