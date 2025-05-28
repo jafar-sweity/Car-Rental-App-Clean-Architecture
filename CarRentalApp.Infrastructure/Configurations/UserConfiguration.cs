@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CarRentalApp.Core.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace CarRentalApp.Infrastructure.Configurations
             builder.Property(u => u.AddressLine2).HasColumnName("address_line2").HasMaxLength(100);
             builder.Property(u => u.City).HasColumnName("city").HasMaxLength(50);
             builder.Property(u => u.Country).HasColumnName("country").HasMaxLength(50);
-            builder.Property(u => u.DriversLicenseNumber).HasColumnName("drivers_license_number").HasMaxLength(50)        }
+            builder.Property(u => u.DriversLicenseNumber).HasColumnName("drivers_license_number").HasMaxLength(50);
+        }
     }
 }
