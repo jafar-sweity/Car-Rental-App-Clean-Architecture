@@ -17,6 +17,11 @@ namespace CarRentalApp.Infrastructure.Data
 
         public DbSet<Car> Cars { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<Reservation> Reservations { get; set; }  
+        public DbSet<Reservation> Reservations { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+        }
     }
 }
