@@ -1,11 +1,6 @@
 ﻿using CarRentalApp.Core.InterfacesRepository;
 using CarRentalApp.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarRentalApp.Infrastructure.Repositories
 {
@@ -37,7 +32,7 @@ namespace CarRentalApp.Infrastructure.Repositories
             {
                 var user = await _context.Users.FindAsync(id) ?? throw new KeyNotFoundException("User not found.");
                 _context.Users.Remove(user);
-                 await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
@@ -89,8 +84,7 @@ namespace CarRentalApp.Infrastructure.Repositories
             try
             {
                 var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
-
-                return user ?? throw new KeyNotFoundException($"User with email {email} not found.");
+                return user == null ? throw new KeyNotFoundException($"User with email {email} not found.") : user;
             }
             catch (Exception ex)
             {

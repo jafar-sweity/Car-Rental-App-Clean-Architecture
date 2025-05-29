@@ -39,6 +39,11 @@ namespace CarRentalApp.Web.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] UserLoginDto userLoginDto)
         {
+            var existingUser = await _userService.GetUserByEmailAsync(userLoginDto.Email);
+            if (existingUser == null)
+            {
+                return Unauthorized("The email or password is incorrect.");
+            }
             var token = await _authService.AuthenticateAsync(userLoginDto.Email, userLoginDto.Password);
             if (string.IsNullOrEmpty(token))
             {
