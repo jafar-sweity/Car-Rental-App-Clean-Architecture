@@ -2,15 +2,10 @@
 using CarRentalApp.Core.InterfacesRepository;
 using CarRentalApp.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarRentalApp.Infrastructure.Repositories
 {
-    public class ReservationRepository: IReservationRepository
+    public class ReservationRepository : IReservationRepository
     {
         private readonly ApplicationDbContext _context;
 
@@ -21,7 +16,7 @@ namespace CarRentalApp.Infrastructure.Repositories
 
         public async Task AddReservationAsync(Reservation reservation)
         {
-            if (reservation.StartDate >=reservation.EndDate)
+            if (reservation.StartDate >= reservation.EndDate)
             {
                 throw new ArgumentException("Start date must be before end date.");
             }
@@ -43,7 +38,7 @@ namespace CarRentalApp.Infrastructure.Repositories
             {
                 var reservation = _context.Reservations.Find(reservationId);
 
-                if (reservation!=null)
+                if (reservation != null)
                 {
                     _context.Reservations.Remove(reservation);
                     await _context.SaveChangesAsync();
