@@ -1,4 +1,4 @@
-## 🚗 Car Rental Web Application – ASP.NET Core
+## Car Rental Web Application – ASP.NET Core
 
 ### 📌 Overview
 
@@ -6,7 +6,7 @@ This is a **Car Rental Web Application** built using **ASP.NET Core** and **Clea
 
 ---
 
-### 🧱 Architecture
+### Architecture
 
 This application is built with a **Clean Architecture** structure:
 
@@ -25,13 +25,13 @@ CarRentalApp/
 
 #### ✅ Authentication & Authorization
 
-- 🔒 JWT-based login and secure session management
-- ✍️ Register (Sign Up) with full user details and hashed password
-- 🔐 Role-based authorization (customer, admin – _admin role is optional/bonus_)
-- 🧠 Unique email validation
-- 🔁 Forgot password flow (bonus – to be implemented)
+- JWT-based login and secure session management
+- Register (Sign Up) with full user details and hashed password
+- Role-based authorization (customer, admin – _admin role is optional/bonus_)
+- Unique email validation
+- Forgot password flow (bonus – to be implemented)
 
-#### 🧍 User Registration
+#### User Registration
 
 Collects:
 
@@ -43,12 +43,12 @@ Collects:
 - Full Address (Line1, Line2, City, Country)
 - Driver’s License Number
 
-#### 🔑 Login
+#### Login
 
 - Email + password
 - Returns a **JWT token** on successful login
 
-#### 🏠 User Dashboard (Main Page)
+#### User Dashboard (Main Page)
 
 - List of **available cars**
 - Search cars by preferences (location, date, etc.)
@@ -56,7 +56,7 @@ Collects:
 
 ---
 
-### 🧪 Technologies Used
+### Technologies Used
 
 - **ASP.NET Core Web API**
 - **Entity Framework Core**
@@ -96,10 +96,6 @@ Collects:
      "Issuer": "yourdomain.com",
      "Audience": "yourdomain.com"
    }
-   ```
-
-   ```
-
    ```
 
 ---
