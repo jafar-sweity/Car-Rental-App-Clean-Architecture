@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CarRentalApp.Application.Models.Reservations
+﻿namespace CarRentalApp.Application.Models.Reservations
 {
     public record ReservationDto
     (
