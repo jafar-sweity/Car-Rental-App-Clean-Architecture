@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace CarRentalApp.Application.Validatiors.Cars
 {
-    class CarCreateValidator : AbstractValidator<CarCreateDto>
+    public class CarCreateValidator : AbstractValidator<CarCreateDto>
     {
         public CarCreateValidator()
         {
