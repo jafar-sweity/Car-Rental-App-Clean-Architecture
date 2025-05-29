@@ -84,7 +84,7 @@ namespace CarRentalApp.Infrastructure.Repositories
             try
             {
                 var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
-                return user == null ? throw new KeyNotFoundException($"User with email {email} not found.") : user;
+                return user;
             }
             catch (Exception ex)
             {
