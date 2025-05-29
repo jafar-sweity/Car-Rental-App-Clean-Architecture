@@ -1,10 +1,12 @@
 ﻿using CarRentalApp.Application.InterfacesService;
 using CarRentalApp.Application.Models.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace CarRentalApp.Web.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
