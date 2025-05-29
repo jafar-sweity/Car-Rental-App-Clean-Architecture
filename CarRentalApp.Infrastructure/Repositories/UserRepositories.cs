@@ -83,5 +83,19 @@ namespace CarRentalApp.Infrastructure.Repositories
                 throw new Exception("An error occurred while updating the user.", ex);
             }
         }
+
+        public async Task<User> GetUserByEmailAsync(string email)
+        {
+            try
+            {
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+
+                return user ?? throw new KeyNotFoundException($"User with email {email} not found.");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error fetching user by email.", ex);
+            }
+        }
     }
 }
