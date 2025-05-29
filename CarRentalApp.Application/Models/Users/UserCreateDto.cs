@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CarRentalApp.Application.Models.User
+﻿namespace CarRentalApp.Application.Models.User
 {
     public record UserCreateDto
     (
@@ -17,6 +11,8 @@ namespace CarRentalApp.Application.Models.User
            string AddressLine2,
            string City,
            string Country,
-           string DriversLicenseNumber
+           string DriversLicenseNumber,
+           string PasswordHash
+
     );
 }
